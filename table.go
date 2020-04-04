@@ -19,7 +19,7 @@ package stringtable
 
 	Utility features:
 
-	* ReadCSV .. read a semicolon seperated CSV
+	* ReadCSV .. read a semicolon separated CSV
     * WriteCSV writes the table to a file
 
 	The package currently support a number of methods to manipulate a table
@@ -28,7 +28,7 @@ package stringtable
 	* Append	concatenaate two tables with the same rows.
 	* LeftJoin	Join tables on common key.
 	* AddColumn	Add a column with name and the correct length.
-	* Select	Select columns by name in prefered order.
+	* Select	Select columns by name in preferred order.
 	* Colmap    Get a map of column names with their index.
 
 	Future extensions:
@@ -89,7 +89,7 @@ func ReadCSV(filename string) (table Table, err error) {
 	return
 }
 
-// WriteCSV writes the table to a Semicolon seperated file.
+// WriteCSV writes the table to a Semicolon separated file.
 func (m Table) WriteCSV(filename string) error {
 	file, err := os.Create(filename)
 	if err != nil {
@@ -114,7 +114,7 @@ func (m Table) WriteCSV(filename string) error {
  * Table operations
  ************************************************************************/
 
-// Append two tables with equal number of columns. The intial table may be empty.
+// Append two tables with equal number of columns. The initial table may be empty.
 // This function will terminate with fatal if the number of columns varies.
 func (m Table) Append(a Table) Table {
 	if len(m) > 0 {
