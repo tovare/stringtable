@@ -59,7 +59,7 @@ type ColumnIndices map[string]int
  * Utility functions
  ************************************************************************/
 
-// ReadCSVTrimmed reads a CSV file and trim whitespace in each field.
+// ReadCSVTrim reads a CSV file and trim whitespace in each field.
 func ReadCSVTrim(filename string) (table Table, err error) {
 	table, err = ReadCSV(filename)
 	for i, line := range table {
@@ -240,6 +240,7 @@ func (m Table) Select(columns ...string) (table Table, err error) {
 // Logical tests
 //*******************************************************
 
+// Equal if both tables have the same dimensions and content.
 func (m Table) Equal(right Table) (ok bool) {
 
 	if len(m) != len(right) {
