@@ -33,7 +33,7 @@ For ease of use, we define the type: Table, which is simply a rectangular slice 
 (github.com/360EntSecGroup-Skylar/excelize)
 
 
-## Selct columns
+## Select columns
 
     a := Table{{"one", "two","three"}, 
                 {"1", "2","3"},
@@ -53,6 +53,16 @@ Table b (result, selected and reordered)
 |  2    |  3  |
 |  2    |  3  |
 
+## Select many columns where columns are in a string array.
+
+    a := Table{{"one", "two","three"}, 
+                {"1", "2","3"},
+                {"1", "2","3"},
+                {"1", "2","3"}}
+
+    mySelection := string{"three", "two", "one"}
+
+    b := a.Select(mySelection ...)
 
 ## Rename all columns 
 
