@@ -26,18 +26,19 @@ package stringtable
 
 	* Filter	keep all the elements which satisfy your filter function.
 	* Append	concatenaate two tables with the same rows.
-	* LeftJoin	Join tables on common key.
+	* LeftJoin	Join tables on common first key.
 	* AddColumn	Add a column with name and the correct length.
 	* Select	Select columns by name in preferred order.
 	* Colmap    Get a map of column names with their index.
 
 	Future extensions:
 
+	* Apply		MAYBE mutate a column (Just iterate for now starting with the first row of data)
+	*           can prepare a colmap to make it easy.
 	* SplitN	TODO split the table into n equal parts.
 	* GetRandomRows TODO get a random selction of rows.
-	* Apply		MAYBE mutate a column (Just iterate for now starting with the first row of data)
-	* Reduce	MAYBE NOT reduce to a target table
 	* Head		MAYBE get the first 10 lines.
+	* Reduce	MAYBE NOT reduce to a target table
 
 */
 
