@@ -48,10 +48,10 @@ Table a
 | 1   |  2  |  3    |
 
 Table b (result, selected and reordered)
-| two | three |
-|-----|-------|
-|  2  |  3    |
-|  2  |  3    |
+| three | two |
+|-------|-----|
+|  2    |  3  |
+|  2    |  3  |
 
 
 ## Rename all columns 
