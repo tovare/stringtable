@@ -61,8 +61,8 @@ type ColumnIndices map[string]int
  ************************************************************************/
 
 // ReadCSVTrim reads a CSV file and trim whitespace in each field.
-func ReadCSVTrim(filename string) (table Table, err error) {
-	table, err = ReadCSV(filename)
+func ReadCSVTrim(filename string, comma rune) (table Table, err error) {
+	table, err = ReadCSV(filename, comma)
 	for i, line := range table {
 		for j, col := range line {
 			table[i][j] = strings.TrimSpace(col)
@@ -72,14 +72,14 @@ func ReadCSVTrim(filename string) (table Table, err error) {
 }
 
 // ReadCSV reads a CSV file and return a table structure delimited with semicolons.
-func ReadCSV(filename string) (table Table, err error) {
+func ReadCSV(filename string, comma rune) (table Table, err error) {
 	f, err := os.Open(filename)
 	defer f.Close()
 	if err != nil {
 		return
 	}
 	csv := csv.NewReader(f)
-	csv.Comma = ';'
+	csv.Comma = comma
 	csv.ReuseRecord = false
 	t, err := csv.ReadAll()
 	if err != nil {

@@ -12,7 +12,7 @@ func TestWriteCSV(t *testing.T) {
 	if err != nil {
 		t.Errorf("Failed to save %v", err)
 	}
-	_, err = ReadCSV("test_tmp.csv")
+	_, err = ReadCSV("test_tmp.csv", ';')
 	if err != nil {
 		t.Errorf("Failed rountrip %v", err)
 	}
